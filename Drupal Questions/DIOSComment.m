@@ -1,13 +1,13 @@
 //
-//  WHFirstViewController.h
+//  DIOSComment.m
 //  Drupal Questions
 //
 //  Created by Kyle Browning .
 //  Copyright (c) 2012 Workhabit. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DIOSComment.h"
 
-@interface WHFirstViewController : UIViewController
+@implementation DIOSComment
 
 @end
