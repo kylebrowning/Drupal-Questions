@@ -13,13 +13,13 @@
 @implementation DIOSSession
 @synthesize delegate;
 + (DIOSSession *)sharedSession {
-  static DIOSSession *sharedSession = nil;
-  static dispatch_once_t oncePredicate;
-  dispatch_once(&oncePredicate, ^{
+  static dispatch_once_t once;
+  static DIOSSession *sharedSession;
+  dispatch_once(&once, ^ { 
     sharedSession = [[self alloc] initWithBaseURL:[NSURL URLWithString:kDiosBaseUrl]];
-    [sharedSession setParameterEncoding:AFPropertyListParameterEncoding];
+    [sharedSession setParameterEncoding:AFJSONParameterEncoding];
   });
-  
+  return sharedSession;
   return sharedSession;
 }
 
@@ -30,11 +30,11 @@
   }
   
   [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
-  
+  [self setDelegate:self];
   // Accept HTTP Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.1
 	[self setDefaultHeader:@"Accept" value:@"application/json"];
+  [self setDefaultHeader:@"Content-Type" value:@"application/json"];
 	
-  
   return self;
 }
 - (void)getPath:(NSString *)path 
@@ -75,5 +75,17 @@
 	NSURLRequest *request = [self requestWithMethod:@"DELETE" path:path parameters:parameters];
 	AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
   [self enqueueHTTPRequestOperation:operation];
+}
+- (void)callDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  if(status) {
+    //success!
+    DLog(@"SUCCESS: %@", response);
+  } else {
+    //something happened im sorry!
+    DLog(@"FAILED: %@", operation);
+    //    DLog(@"%@", [[operation response] allHeaderFields]);
+    NSString *localizedStatusCodeString = [NSHTTPURLResponse localizedStringForStatusCode:[[operation response] statusCode]];
+    DLog(@"%d %@", [[operation response] statusCode], localizedStatusCodeString);
+  }
 }
 @end

@@ -11,7 +11,11 @@
 #import "Settings.h"
 @protocol DIOSSessionDelegate;
 
-@interface DIOSSession : AFHTTPClient {
+@protocol DIOSSessionDelegate <NSObject>
+- (void)callDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error;
+@end
+
+@interface DIOSSession : AFHTTPClient <DIOSSessionDelegate>{
   id <DIOSSessionDelegate> delegate;
 }
 @property (strong, nonatomic) id <DIOSSessionDelegate> delegate;
@@ -77,8 +81,3 @@
            failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;
 @end
 
-
-@protocol DIOSSessionDelegate <NSObject>
-- (void)success:(AFHTTPRequestOperation *)operation response:(id)response;
-- (void)failure:(AFHTTPRequestOperation *)operation error:(NSError *)error;
-@end

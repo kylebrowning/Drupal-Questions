@@ -37,7 +37,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="9ZT-Ep-aVm"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-43" y="135"/>
+            <point key="canvasLocation" x="573" y="-577"/>
         </scene>
         <!--Table View Controller - Category-->
         <scene sceneID="XC9-Xb-fPn">
@@ -67,7 +67,7 @@
                     <navigationItem key="navigationItem" title="Category" id="5A0-18-Qj9"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="455" y="135"/>
+            <point key="canvasLocation" x="1071" y="-577"/>
         </scene>
         <!--Table View Controller - AddQuestion-->
         <scene sceneID="hMv-Mf-T2T">
@@ -100,7 +100,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="942" y="-1898"/>
+            <point key="canvasLocation" x="1558" y="-2610"/>
         </scene>
         <!--Questions Root View Controller - Questions-->
         <scene sceneID="oZV-BR-eJM">
@@ -144,7 +144,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-43" y="-1217"/>
+            <point key="canvasLocation" x="573" y="-1929"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="GWK-u9-zca">
@@ -174,7 +174,7 @@
                     <navigationItem key="navigationItem" id="Gsv-g6-JUg"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="512" y="-1211"/>
+            <point key="canvasLocation" x="1128" y="-1923"/>
         </scene>
         <!--Table View Controller - People-->
         <scene sceneID="JsJ-ZC-hWZ">
@@ -207,7 +207,7 @@
                     <navigationItem key="navigationItem" title="People" id="7iJ-Hv-nUh"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-43" y="-576"/>
+            <point key="canvasLocation" x="573" y="-1288"/>
         </scene>
         <!--Table View Controller - PeopleDetailView-->
         <scene sceneID="e6R-07-iQj">
@@ -237,7 +237,7 @@
                     <navigationItem key="navigationItem" title="Person" id="jn7-bj-9nS"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="476" y="-576"/>
+            <point key="canvasLocation" x="1092" y="-1288"/>
         </scene>
         <!--Table View Controller - Settings-->
         <scene sceneID="ej8-vt-6ai">
@@ -267,7 +267,7 @@
                     <navigationItem key="navigationItem" id="LW8-Vp-bhK"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-31" y="804"/>
+            <point key="canvasLocation" x="585" y="92"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -288,7 +288,7 @@
                     </connections>
                 </tabBarController>
             </objects>
-            <point key="canvasLocation" x="-1296" y="-612"/>
+            <point key="canvasLocation" x="-680" y="-1324"/>
         </scene>
         <!--Navigation Controller - Settings-->
         <scene sceneID="AZ3-rZ-p7Z">
@@ -307,7 +307,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-557" y="804"/>
+            <point key="canvasLocation" x="59" y="92"/>
         </scene>
         <!--Navigation Controller - People-->
         <scene sceneID="VMy-Fc-p45">
@@ -326,7 +326,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-569" y="-576"/>
+            <point key="canvasLocation" x="47" y="-1288"/>
         </scene>
         <!--Navigation Controller - Questions-->
         <scene sceneID="Txo-68-XMC">
@@ -349,7 +349,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-569" y="-1217"/>
+            <point key="canvasLocation" x="47" y="-1929"/>
         </scene>
         <!--Navigation Controller - Categories-->
         <scene sceneID="r2c-jj-Tu8">
@@ -368,7 +368,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-569" y="135"/>
+            <point key="canvasLocation" x="47" y="-577"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xCy-9e-tBh">
@@ -386,7 +386,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="416" y="-1898"/>
+            <point key="canvasLocation" x="1032" y="-2610"/>
         </scene>
     </scenes>
     <classes>
