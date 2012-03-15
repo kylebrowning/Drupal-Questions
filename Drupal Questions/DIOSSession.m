@@ -11,7 +11,7 @@
 #import "AFPropertyListRequestOperation.h"
 
 @implementation DIOSSession
-@synthesize delegate;
+@synthesize delegate, user;
 + (DIOSSession *)sharedSession {
   static dispatch_once_t once;
   static DIOSSession *sharedSession;
@@ -79,13 +79,13 @@
 - (void)callDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   if(status) {
     //success!
-    DLog(@"SUCCESS: %@", response);
+    NSString *localizedStatusCodeString = [NSHTTPURLResponse localizedStringForStatusCode:[[operation response] statusCode]];
+    DLog(@"SUCCESS: %d %@ %@, %@", [[operation response] statusCode], localizedStatusCodeString, [operation responseString], response);
   } else {
     //something happened im sorry!
-    DLog(@"FAILED: %@", operation);
     //    DLog(@"%@", [[operation response] allHeaderFields]);
     NSString *localizedStatusCodeString = [NSHTTPURLResponse localizedStringForStatusCode:[[operation response] statusCode]];
-    DLog(@"%d %@", [[operation response] statusCode], localizedStatusCodeString);
+    DLog(@"FAILED: %d %@ %@, %@", [[operation response] statusCode], localizedStatusCodeString, [operation responseString], response);
   }
 }
 @end

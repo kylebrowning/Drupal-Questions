@@ -2,6 +2,10 @@
 #define kDiosEndpoint @"api"
 #define kDiosBaseNode @"node"
 #define kDiosBaseComment @"comment"
+#define kDiosBaseUser @"user"
+#define kDiosBaseTaxonmyTerm @"taxonomy_term"
+#define kDiosBaseTaxonmyVocabulary @"taxonomy_vocabulary"
+
 #ifdef DEBUG
 #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else

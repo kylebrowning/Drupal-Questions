@@ -17,8 +17,10 @@
 
 @interface DIOSSession : AFHTTPClient <DIOSSessionDelegate>{
   id <DIOSSessionDelegate> delegate;
+  NSDictionary *user;
 }
 @property (strong, nonatomic) id <DIOSSessionDelegate> delegate;
+@property (strong, nonatomic) NSDictionary *user;
 + (DIOSSession *)sharedSession;
 /**
  Creates an `AFHTTPRequestOperation` with a `GET` request, and enqueues it to the HTTP client's operation queue.

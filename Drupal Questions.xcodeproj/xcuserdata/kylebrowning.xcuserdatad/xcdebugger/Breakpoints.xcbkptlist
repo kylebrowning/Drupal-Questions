@@ -7,13 +7,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Drupal Questions/DIOSSession.m"
-         timestampString = "353402208.229104"
+         filePath = "Drupal Questions/DIOSUser.m"
+         timestampString = "353457222.63842"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "-postPath:parameters:success:failure:"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
+         landmarkName = "-userLoginWithUsername:andPassword:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

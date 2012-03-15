@@ -33,13 +33,13 @@
     if ([_delegate respondsToSelector:@selector(commentGetDidFinish:operation:response:error:)]) {
       [_delegate commentGetDidFinish:YES operation:operation response:JSON error:nil];
     } else {
-      DLog(@"I couldnt find the delegate for this get so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this get so my response will never be used.", _delegate);
     }
   } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
     if ([_delegate respondsToSelector:@selector(commentGetDidFinish:operation:response:error:)]) {
       [_delegate commentGetDidFinish:NO operation:operation response:nil error:error];
     } else {
-      DLog(@"I couldnt find the delegate for this get so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this get so my response will never be used.", _delegate);
     }
   }];
 }
@@ -48,43 +48,43 @@
   [[session delegate] callDidFinish:status operation:operation response:response error:error];
 }
 
-#pragma mark CommentPosts
-- (void)commentPost:(NSDictionary *)comment {
+#pragma mark commentSaves
+- (void)commentSave:(NSDictionary *)comment {
   [[DIOSSession sharedSession] postPath:[NSString stringWithFormat:@"%@/%@", kDiosEndpoint, kDiosBaseComment] parameters:comment success:^(__unused AFHTTPRequestOperation *operation, id JSON) {
-    if ([_delegate respondsToSelector:@selector(commentPostDidFinish:operation:response:error:)]) {
-      [_delegate commentPostDidFinish:YES operation:operation response:JSON error:nil];
+    if ([_delegate respondsToSelector:@selector(commentSaveDidFinish:operation:response:error:)]) {
+      [_delegate commentSaveDidFinish:YES operation:operation response:JSON error:nil];
     } else {
-      DLog(@"I couldnt find the delegate for this post so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this post so my response will never be used.", _delegate);
     }
   } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
-    if ([_delegate respondsToSelector:@selector(commentPostDidFinish:operation:response:error:)]) {
-      [_delegate commentPostDidFinish:NO operation:operation response:nil error:error];
+    if ([_delegate respondsToSelector:@selector(commentSaveDidFinish:operation:response:error:)]) {
+      [_delegate commentSaveDidFinish:NO operation:operation response:nil error:error];
     } else {
-      DLog(@"I couldnt find the delegate for this post so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this post so my response will never be used.", _delegate);
     }
   }];
 }
-- (void)commentPostDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+- (void)commentSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
 }
 
-#pragma mark CommentPut
-- (void)commentPut:(NSDictionary *)comment {
+#pragma mark commentUpdate
+- (void)commentUpdate:(NSDictionary *)comment {
   [[DIOSSession sharedSession] putPath:[NSString stringWithFormat:@"%@/%@/%@", kDiosEndpoint, kDiosBaseComment, [comment objectForKey:@"cid"]] parameters:comment success:^(__unused AFHTTPRequestOperation *operation, id JSON) {
-    if ([_delegate respondsToSelector:@selector(commentPutDidFinish:operation:response:error:)]) {
-      [_delegate commentPutDidFinish:YES operation:operation response:JSON error:nil];
+    if ([_delegate respondsToSelector:@selector(commentUpdateDidFinish:operation:response:error:)]) {
+      [_delegate commentUpdateDidFinish:YES operation:operation response:JSON error:nil];
     } else {
-      DLog(@"I couldnt find the delegate for this put so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this put so my response will never be used.", _delegate);
     }
   } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
-    if ([_delegate respondsToSelector:@selector(commentPutDidFinish:operation:response:error:)]) {
-      [_delegate commentPutDidFinish:NO operation:operation response:nil error:error];
+    if ([_delegate respondsToSelector:@selector(commentUpdateDidFinish:operation:response:error:)]) {
+      [_delegate commentUpdateDidFinish:NO operation:operation response:nil error:error];
     } else {
-      DLog(@"I couldnt find the delegate for this put so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this put so my response will never be used.", _delegate);
     }
   }];
 }
-- (void)commentPutDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+- (void)commentUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
 }
 
@@ -94,17 +94,47 @@
     if ([_delegate respondsToSelector:@selector(commentDeleteDidFinish:operation:response:error:)]) {
       [_delegate commentDeleteDidFinish:YES operation:operation response:JSON error:nil];
     } else {
-      DLog(@"I couldnt find the delegate for this delete so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
     }
   } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
     if ([_delegate respondsToSelector:@selector(commentDeleteDidFinish:operation:response:error:)]) {
       [_delegate commentDeleteDidFinish:NO operation:operation response:nil error:error];
     } else {
-      DLog(@"I couldnt find the delegate for this delete so my response will never be used.");
+      DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
     }
   }];
 }
 - (void)commentDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+}
+
+#pragma mark commentIndex
+//Simpler method if you didnt want to build the params :)
+- (void)commentIndexWithPage:(NSString *)page fields:(NSString *)fields parameters:(NSArray *)parameteres pageSize:(NSString *)pageSize {
+  NSMutableDictionary *commentIndexDict = [NSMutableDictionary new];
+  [commentIndexDict setValue:page forKey:@"page"];
+  [commentIndexDict setValue:fields forKey:@"fields"];
+  [commentIndexDict setValue:parameteres forKey:@"parameters"];
+  [commentIndexDict setValue:pageSize forKey:@"pagesize"];  
+  [self commentIndex:commentIndexDict];
+}
+
+- (void)commentIndex:(NSDictionary *)params {
+  [[DIOSSession sharedSession] getPath:[NSString stringWithFormat:@"%@/%@", kDiosEndpoint, kDiosBaseComment] parameters:params success:^(__unused AFHTTPRequestOperation *operation, id JSON) {
+    if ([_delegate respondsToSelector:@selector(commentIndexDidFinish:operation:response:error:)]) {
+      [_delegate commentIndexDidFinish:YES operation:operation response:JSON error:nil];
+    } else {
+      DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
+    }
+  } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
+    if ([_delegate respondsToSelector:@selector(commentIndexDidFinish:operation:response:error:)]) {
+      [_delegate commentIndexDidFinish:NO operation:operation response:nil error:error];
+    } else {
+      DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
+    }
+  }];
+}
+- (void)commentIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
 }
 @end
