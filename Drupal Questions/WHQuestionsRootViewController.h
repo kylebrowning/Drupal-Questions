@@ -11,7 +11,9 @@
 #import "DIOSComment.h"
 #import "DIOSUser.h"
 #import "DIOSTaxonomy.h"
-@interface WHQuestionsRootViewController : UITableViewController <DIOSNodeDelegate, DIOSCommentDelegate, DIOSUserDelegate, DIOSTaxonomyDelegate>
+#import "WHQuestionCell.h"
+@interface WHQuestionsRootViewController : UITableViewController <DIOSNodeDelegate, DIOSCommentDelegate, DIOSUserDelegate, DIOSTaxonomyDelegate> {
+}
 
 #pragma mark node delegate methods
 - (void)nodeGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error;

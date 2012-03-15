@@ -34,11 +34,15 @@
 		1D7CB693150ABE0B001279B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CB692150ABE0B001279B0 /* main.m */; };
 		1D7CB697150ABE0B001279B0 /* WHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CB696150ABE0B001279B0 /* WHAppDelegate.m */; };
 		1D7CB69A150ABE0B001279B0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7CB698150ABE0B001279B0 /* MainStoryboard.storyboard */; };
-		1D7CB69D150ABE0B001279B0 /* WHFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CB69C150ABE0B001279B0 /* WHFirstViewController.m */; };
-		1D7CB6A4150ABE0B001279B0 /* WHSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CB6A3150ABE0B001279B0 /* WHSecondViewController.m */; };
-		1DA2D1A11511AC7200B6E165 /* cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D19F1511AC7200B6E165 /* cell_bg.png */; };
-		1DA2D1A21511AC7200B6E165 /* cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1A01511AC7200B6E165 /* cell_bg@2x.png */; };
 		1DA2D1A61511B97200B6E165 /* DIOSTaxonomy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2D1A51511B97200B6E165 /* DIOSTaxonomy.m */; };
+		1DA2D1A91511CF3600B6E165 /* AddQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2D1A81511CF3500B6E165 /* AddQuestionViewController.m */; };
+		1DA2D1AC1512463900B6E165 /* WHQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2D1AB1512463900B6E165 /* WHQuestionCell.m */; };
+		1DA2D1AF151250B000B6E165 /* done_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1AD151250AF00B6E165 /* done_button_off.png */; };
+		1DA2D1B0151250B000B6E165 /* done_button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1AE151250B000B6E165 /* done_button_on.png */; };
+		1DA2D1B3151250BD00B6E165 /* done_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B1151250BC00B6E165 /* done_button_off@2x.png */; };
+		1DA2D1B4151250BD00B6E165 /* done_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B2151250BC00B6E165 /* done_button_on@2x.png */; };
+		1DA2D1B7151251FF00B6E165 /* cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B5151251FF00B6E165 /* cell_bg.png */; };
+		1DA2D1B8151251FF00B6E165 /* cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B6151251FF00B6E165 /* cell_bg@2x.png */; };
 		1DC6558715117C3A00B28B6B /* add_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC6558615117C3A00B28B6B /* add_button_off.png */; };
 		1DC6558915117C4200B28B6B /* add_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC6558815117C4200B28B6B /* add_button_off@2x.png */; };
 		1DC6558D1511818200B28B6B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC6558C1511818200B28B6B /* bg.png */; };
@@ -105,14 +109,18 @@
 		1D7CB695150ABE0B001279B0 /* WHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHAppDelegate.h; sourceTree = "<group>"; };
 		1D7CB696150ABE0B001279B0 /* WHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHAppDelegate.m; sourceTree = "<group>"; };
 		1D7CB699150ABE0B001279B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		1D7CB69B150ABE0B001279B0 /* WHFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHFirstViewController.h; sourceTree = "<group>"; };
-		1D7CB69C150ABE0B001279B0 /* WHFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHFirstViewController.m; sourceTree = "<group>"; };
-		1D7CB6A2150ABE0B001279B0 /* WHSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHSecondViewController.h; sourceTree = "<group>"; };
-		1D7CB6A3150ABE0B001279B0 /* WHSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHSecondViewController.m; sourceTree = "<group>"; };
-		1DA2D19F1511AC7200B6E165 /* cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg.png; sourceTree = "<group>"; };
-		1DA2D1A01511AC7200B6E165 /* cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_bg@2x.png"; sourceTree = "<group>"; };
 		1DA2D1A41511B97200B6E165 /* DIOSTaxonomy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSTaxonomy.h; sourceTree = "<group>"; };
 		1DA2D1A51511B97200B6E165 /* DIOSTaxonomy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSTaxonomy.m; sourceTree = "<group>"; };
+		1DA2D1A71511CF3500B6E165 /* AddQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuestionViewController.h; sourceTree = "<group>"; };
+		1DA2D1A81511CF3500B6E165 /* AddQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddQuestionViewController.m; sourceTree = "<group>"; };
+		1DA2D1AA1512463800B6E165 /* WHQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHQuestionCell.h; sourceTree = "<group>"; };
+		1DA2D1AB1512463900B6E165 /* WHQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHQuestionCell.m; sourceTree = "<group>"; };
+		1DA2D1AD151250AF00B6E165 /* done_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_button_off.png; sourceTree = "<group>"; };
+		1DA2D1AE151250B000B6E165 /* done_button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_button_on.png; sourceTree = "<group>"; };
+		1DA2D1B1151250BC00B6E165 /* done_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done_button_off@2x.png"; sourceTree = "<group>"; };
+		1DA2D1B2151250BC00B6E165 /* done_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done_button_on@2x.png"; sourceTree = "<group>"; };
+		1DA2D1B5151251FF00B6E165 /* cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg.png; sourceTree = "<group>"; };
+		1DA2D1B6151251FF00B6E165 /* cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_bg@2x.png"; sourceTree = "<group>"; };
 		1DC6558615117C3A00B28B6B /* add_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_button_off.png; sourceTree = "<group>"; };
 		1DC6558815117C4200B28B6B /* add_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_button_off@2x.png"; sourceTree = "<group>"; };
 		1DC6558C1511818200B28B6B /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -213,8 +221,12 @@
 				1DC655991511855200B28B6B /* answer_button_off@2x.png */,
 				1DC6559A1511855200B28B6B /* answer_button_on.png */,
 				1DC6559E1511855F00B28B6B /* answer_button_on@2x.png */,
-				1DA2D19F1511AC7200B6E165 /* cell_bg.png */,
-				1DA2D1A01511AC7200B6E165 /* cell_bg@2x.png */,
+				1DA2D1AD151250AF00B6E165 /* done_button_off.png */,
+				1DA2D1AE151250B000B6E165 /* done_button_on.png */,
+				1DA2D1B1151250BC00B6E165 /* done_button_off@2x.png */,
+				1DA2D1B2151250BC00B6E165 /* done_button_on@2x.png */,
+				1DA2D1B5151251FF00B6E165 /* cell_bg.png */,
+				1DA2D1B6151251FF00B6E165 /* cell_bg@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -222,6 +234,8 @@
 		1D7CB677150ABE0B001279B0 = {
 			isa = PBXGroup;
 			children = (
+				1DA2D1AA1512463800B6E165 /* WHQuestionCell.h */,
+				1DA2D1AB1512463900B6E165 /* WHQuestionCell.m */,
 				1D7CB68C150ABE0B001279B0 /* Drupal Questions */,
 				1D7CB685150ABE0B001279B0 /* Frameworks */,
 				1D7CB683150ABE0B001279B0 /* Products */,
@@ -254,13 +268,11 @@
 				1D7CB695150ABE0B001279B0 /* WHAppDelegate.h */,
 				1D7CB696150ABE0B001279B0 /* WHAppDelegate.m */,
 				1D7CB698150ABE0B001279B0 /* MainStoryboard.storyboard */,
-				1D7CB69B150ABE0B001279B0 /* WHFirstViewController.h */,
-				1D7CB69C150ABE0B001279B0 /* WHFirstViewController.m */,
-				1D7CB6A2150ABE0B001279B0 /* WHSecondViewController.h */,
-				1D7CB6A3150ABE0B001279B0 /* WHSecondViewController.m */,
 				1D7CB68D150ABE0B001279B0 /* Supporting Files */,
 				1D721593150E99AC008F8118 /* WHQuestionsRootViewController.h */,
 				1D721594150E99AC008F8118 /* WHQuestionsRootViewController.m */,
+				1DA2D1A71511CF3500B6E165 /* AddQuestionViewController.h */,
+				1DA2D1A81511CF3500B6E165 /* AddQuestionViewController.m */,
 			);
 			path = "Drupal Questions";
 			sourceTree = "<group>";
@@ -351,8 +363,12 @@
 				1DC655A715118ECE00B28B6B /* back_button_off@2x.png in Resources */,
 				1DC655A815118ECE00B28B6B /* back_button_on.png in Resources */,
 				1DC655A915118ECE00B28B6B /* back_button_on@2x.png in Resources */,
-				1DA2D1A11511AC7200B6E165 /* cell_bg.png in Resources */,
-				1DA2D1A21511AC7200B6E165 /* cell_bg@2x.png in Resources */,
+				1DA2D1AF151250B000B6E165 /* done_button_off.png in Resources */,
+				1DA2D1B0151250B000B6E165 /* done_button_on.png in Resources */,
+				1DA2D1B3151250BD00B6E165 /* done_button_off@2x.png in Resources */,
+				1DA2D1B4151250BD00B6E165 /* done_button_on@2x.png in Resources */,
+				1DA2D1B7151251FF00B6E165 /* cell_bg.png in Resources */,
+				1DA2D1B8151251FF00B6E165 /* cell_bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,8 +381,6 @@
 			files = (
 				1D7CB693150ABE0B001279B0 /* main.m in Sources */,
 				1D7CB697150ABE0B001279B0 /* WHAppDelegate.m in Sources */,
-				1D7CB69D150ABE0B001279B0 /* WHFirstViewController.m in Sources */,
-				1D7CB6A4150ABE0B001279B0 /* WHSecondViewController.m in Sources */,
 				1D72154B150E848C008F8118 /* DIOSSession.m in Sources */,
 				1D721592150E9712008F8118 /* DIOSNode.m in Sources */,
 				1D721582150E8575008F8118 /* AFHTTPClient.m in Sources */,
@@ -383,6 +397,8 @@
 				1D721598150EB1D6008F8118 /* DIOSComment.m in Sources */,
 				1D782837151145EA00880F91 /* DIOSUser.m in Sources */,
 				1DA2D1A61511B97200B6E165 /* DIOSTaxonomy.m in Sources */,
+				1DA2D1A91511CF3600B6E165 /* AddQuestionViewController.m in Sources */,
+				1DA2D1AC1512463900B6E165 /* WHQuestionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

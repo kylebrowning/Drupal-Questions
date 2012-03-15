@@ -26,7 +26,7 @@
 - (void)applyDefaultStyle {
   // add the drop shadow
   self.layer.shadowColor = [[UIColor blackColor] CGColor];
-  self.layer.shadowOffset = CGSizeMake(0.0, 3);
+  self.layer.shadowOffset = CGSizeMake(0.0, 4);
   self.layer.shadowOpacity = 0.25;
   self.layer.masksToBounds = NO;
   self.layer.shouldRasterize = YES;
@@ -39,18 +39,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    [[UITableView appearance] setBackgroundColor:[UIColor clearColor]];
+  // Override point for customization after application launch.
+  [[UITableView appearance] setBackgroundColor:[UIColor clearColor]];
   [[UITableView appearance] setSeparatorColor:[UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:1.0]];
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg.png"]];
-    [background setFrame:CGRectMake(0, 63, 320, 369)];
-    [_window addSubview:background];
-
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"top_bar_bg_no_text.png"] forBarMetrics:UIBarMetricsDefault];
+  UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg.png"]];
+  [background setFrame:CGRectMake(0, 63, 320, 480)];
+  [_window addSubview:background];
+  
+  [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"top_bar_bg_no_text.png"] forBarMetrics:UIBarMetricsDefault];
   [[UITabBar appearance] setTintColor:[UIColor colorWithRed:40.0/255.0 green:40.0/255.0 blue:40.0/255.0 alpha:1]];
-    return YES;
+  [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
+  return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
   // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

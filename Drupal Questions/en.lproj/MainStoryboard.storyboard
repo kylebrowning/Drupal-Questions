@@ -69,38 +69,39 @@
             </objects>
             <point key="canvasLocation" x="1071" y="-577"/>
         </scene>
-        <!--Table View Controller - AddQuestion-->
+        <!--Add Question View Controller - AddQuestion-->
         <scene sceneID="hMv-Mf-T2T">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2F-Y3-dB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController storyboardIdentifier="AddQuestionViewController" id="DM9-Gs-bQV" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dce-r9-enw">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                <tableViewController storyboardIdentifier="AddQuestionViewController" id="DM9-Gs-bQV" customClass="AddQuestionViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" id="dce-r9-enw">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddQuestionCell" id="5Zd-kg-G3h">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="RBv-2C-ZjN">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddQuestionCell" rowHeight="367" id="5Zd-kg-G3h">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="366"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="DM9-Gs-bQV" id="2ZS-oB-hHt"/>
                             <outlet property="delegate" destination="DM9-Gs-bQV" id="gnh-zj-G2y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="AddQuestion" id="Vg5-eQ-xdB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="235-le-WH1"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="zPv-wj-Ww4"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="AddQuestion" id="Vg5-eQ-xdB"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1558" y="-2610"/>
+            <point key="canvasLocation" x="947" y="-2533"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="GWK-u9-zca">
@@ -237,10 +238,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ayc-QL-h6b" kind="relationship" relationship="viewControllers" id="olC-po-hHz"/>
-                        <segue destination="HQ1-M5-0zM" kind="relationship" relationship="viewControllers" id="ycI-JV-Ahd"/>
-                        <segue destination="Jl7-oa-tZe" kind="relationship" relationship="viewControllers" id="v3S-8p-meO"/>
-                        <segue destination="xtt-6q-ZUM" kind="relationship" relationship="viewControllers" id="Rw0-vJ-dJh"/>
+                        <segue destination="xtt-6q-ZUM" kind="relationship" relationship="viewControllers" id="Hax-ND-a9x"/>
+                        <segue destination="Ayc-QL-h6b" kind="relationship" relationship="viewControllers" id="rkl-zX-fs1"/>
+                        <segue destination="HQ1-M5-0zM" kind="relationship" relationship="viewControllers" id="0D9-df-iAH"/>
+                        <segue destination="Jl7-oa-tZe" kind="relationship" relationship="viewControllers" id="wqI-bu-EUQ"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -312,31 +313,31 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEp-dz-jDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="fMQ-DF-QPe" customClass="WHQuestionsRootViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="97" sectionHeaderHeight="22" sectionFooterHeight="22" id="s5T-8P-q2i">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="s5T-8P-q2i">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="questioncell" rowHeight="97" id="hMq-pj-ORy">
-                                <rect key="frame" x="0.0" y="22" width="320" height="97"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="questioncell" rowHeight="108" id="hMq-pj-ORy" customClass="WHQuestionCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="cell_bg.png" highlightedImage="add_button_off.png" id="ZX1-bP-w5p">
-                                            <rect key="frame" x="8" y="6" width="304" height="83"/>
+                                            <rect key="frame" x="8" y="5" width="304" height="98"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="kx5-Tt-6Mp">
-                                            <rect key="frame" x="20" y="26" width="21" height="21"/>
+                                            <rect key="frame" x="20" y="27" width="21" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.36078432199999999" green="0.36078432199999999" blue="0.36078432199999999" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Question title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="vpW-1t-6kn">
-                                            <rect key="frame" x="20" y="6" width="230" height="22"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Question title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="vpW-1t-6kn">
+                                            <rect key="frame" x="20" y="7" width="230" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" red="0.29803922772407532" green="0.49411767721176147" blue="0.73725491762161255" alpha="1" colorSpace="deviceRGB"/>
@@ -344,16 +345,16 @@
                                             <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" id="cOI-o4-I88">
-                                            <rect key="frame" x="20" y="55" width="286" height="29"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="cOI-o4-I88">
+                                            <rect key="frame" x="20" y="54" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <string key="text">Whats the longest type of question do tyou think that i could ask that would be longer than two lines? Would it take another question to make it happen?</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.39607846736907959" green="0.39607846736907959" blue="0.39607846736907959" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Session Neame" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="bfF-tK-G4n">
-                                            <rect key="frame" x="132" y="26" width="85" height="21"/>
+                                            <rect key="frame" x="129" y="27" width="85" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.36078432202339172" green="0.36078432202339172" blue="0.36078432202339172" alpha="1" colorSpace="deviceRGB"/>
@@ -367,14 +368,14 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="ln7-bq-E2h">
-                                            <rect key="frame" x="116" y="26" width="21" height="21"/>
+                                            <rect key="frame" x="116" y="27" width="21" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.36078432199999999" green="0.36078432199999999" blue="0.36078432199999999" alpha="1" colorSpace="deviceRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Author Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="noF-KZ-AFY">
-                                            <rect key="frame" x="37" y="26" width="71" height="21"/>
+                                            <rect key="frame" x="40" y="26" width="71" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.035294119268655777" green="0.035294119268655777" blue="0.035294119268655777" alpha="1" colorSpace="deviceRGB"/>
@@ -385,6 +386,11 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="authorName" destination="noF-KZ-AFY" id="m7L-MF-T0B"/>
+                                    <outlet property="commentCount" destination="S5f-SV-0ka" id="WGU-fD-GX7"/>
+                                    <outlet property="questionBody" destination="cOI-o4-I88" id="Oq8-aX-vFs"/>
+                                    <outlet property="questionTitle" destination="vpW-1t-6kn" id="tEI-dk-Fuj"/>
+                                    <outlet property="sessionName" destination="bfF-tK-G4n" id="CC0-6D-uHI"/>
                                     <segue destination="1CB-zK-nrk" kind="push" id="eb6-Tl-kKh"/>
                                 </connections>
                             </tableViewCell>
@@ -395,7 +401,13 @@
                             <outlet property="delegate" destination="fMQ-DF-QPe" id="r1Z-IV-VwT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Jwl-7W-iai"/>
+                    <navigationItem key="navigationItem" id="Jwl-7W-iai">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="q3R-eM-neU">
+                            <connections>
+                                <segue destination="DM9-Gs-bQV" kind="push" identifier="addQuestion" id="iK7-xo-CdW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="594" y="-1929"/>
@@ -419,30 +431,25 @@
             </objects>
             <point key="canvasLocation" x="47" y="-577"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xCy-9e-tBh">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TNk-h4-bPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="Ur7-nz-F64" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="F00-wE-3hA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="DM9-Gs-bQV" kind="relationship" relationship="rootViewController" id="vG9-Ug-Cqa"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1032" y="-2610"/>
-        </scene>
     </scenes>
     <resources>
         <image name="add_button_off.png" width="34" height="32"/>
-        <image name="cell_bg.png" width="304" height="83"/>
+        <image name="cell_bg.png" width="304" height="98"/>
     </resources>
     <classes>
+        <class className="AddQuestionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddQuestionViewController.h"/>
+        </class>
+        <class className="WHQuestionCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WHQuestionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="authorName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="commentCount" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionBody" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sessionName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="WHQuestionsRootViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WHQuestionsRootViewController.h"/>
         </class>

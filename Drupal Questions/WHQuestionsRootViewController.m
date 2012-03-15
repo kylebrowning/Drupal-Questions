@@ -73,7 +73,7 @@
   [taxonomy getTermWithTid:@"2"];
 }
 - (IBAction)test:(id)sender {
-  [self testTaxonmy:sender];
+  [self performSegueWithIdentifier:@"addQuestion" sender:sender];
 }
 - (void)getTreeDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
@@ -179,14 +179,18 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   // Return the number of rows in the section.
-  return 2;
+  return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   static NSString *CellIdentifier = @"questioncell";
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+  WHQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   // Configure the cell...
+  [[cell questionTitle] setText:@"Services question"];
+  [[cell sessionName] setText:@"Native Mobile Application Development"];
+  [[cell commentCount] setText:@"2"];
+  [[cell authorName] setText:@"Kyle Browning"];
   return cell;
 }
 /*
