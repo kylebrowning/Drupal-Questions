@@ -36,13 +36,14 @@
 		1D7CB69A150ABE0B001279B0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7CB698150ABE0B001279B0 /* MainStoryboard.storyboard */; };
 		1DA2D1A61511B97200B6E165 /* DIOSTaxonomy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2D1A51511B97200B6E165 /* DIOSTaxonomy.m */; };
 		1DA2D1A91511CF3600B6E165 /* AddQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2D1A81511CF3500B6E165 /* AddQuestionViewController.m */; };
-		1DA2D1AC1512463900B6E165 /* WHQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA2D1AB1512463900B6E165 /* WHQuestionCell.m */; };
 		1DA2D1AF151250B000B6E165 /* done_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1AD151250AF00B6E165 /* done_button_off.png */; };
 		1DA2D1B0151250B000B6E165 /* done_button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1AE151250B000B6E165 /* done_button_on.png */; };
 		1DA2D1B3151250BD00B6E165 /* done_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B1151250BC00B6E165 /* done_button_off@2x.png */; };
 		1DA2D1B4151250BD00B6E165 /* done_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B2151250BC00B6E165 /* done_button_on@2x.png */; };
 		1DA2D1B7151251FF00B6E165 /* cell_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B5151251FF00B6E165 /* cell_bg.png */; };
 		1DA2D1B8151251FF00B6E165 /* cell_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DA2D1B6151251FF00B6E165 /* cell_bg@2x.png */; };
+		1DB6F31F15127F3300405ACF /* DIOSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6F31E15127F3300405ACF /* DIOSFile.m */; };
+		1DB6F325151281EB00405ACF /* WHQuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6F32115127F4F00405ACF /* WHQuestionCell.m */; };
 		1DC6558715117C3A00B28B6B /* add_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC6558615117C3A00B28B6B /* add_button_off.png */; };
 		1DC6558915117C4200B28B6B /* add_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC6558815117C4200B28B6B /* add_button_off@2x.png */; };
 		1DC6558D1511818200B28B6B /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC6558C1511818200B28B6B /* bg.png */; };
@@ -113,14 +114,16 @@
 		1DA2D1A51511B97200B6E165 /* DIOSTaxonomy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSTaxonomy.m; sourceTree = "<group>"; };
 		1DA2D1A71511CF3500B6E165 /* AddQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuestionViewController.h; sourceTree = "<group>"; };
 		1DA2D1A81511CF3500B6E165 /* AddQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddQuestionViewController.m; sourceTree = "<group>"; };
-		1DA2D1AA1512463800B6E165 /* WHQuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHQuestionCell.h; sourceTree = "<group>"; };
-		1DA2D1AB1512463900B6E165 /* WHQuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHQuestionCell.m; sourceTree = "<group>"; };
 		1DA2D1AD151250AF00B6E165 /* done_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_button_off.png; sourceTree = "<group>"; };
 		1DA2D1AE151250B000B6E165 /* done_button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_button_on.png; sourceTree = "<group>"; };
 		1DA2D1B1151250BC00B6E165 /* done_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done_button_off@2x.png"; sourceTree = "<group>"; };
 		1DA2D1B2151250BC00B6E165 /* done_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done_button_on@2x.png"; sourceTree = "<group>"; };
 		1DA2D1B5151251FF00B6E165 /* cell_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_bg.png; sourceTree = "<group>"; };
 		1DA2D1B6151251FF00B6E165 /* cell_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_bg@2x.png"; sourceTree = "<group>"; };
+		1DB6F31D15127F3300405ACF /* DIOSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSFile.h; sourceTree = "<group>"; };
+		1DB6F31E15127F3300405ACF /* DIOSFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSFile.m; sourceTree = "<group>"; };
+		1DB6F32015127F4F00405ACF /* WHQuestionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHQuestionCell.h; sourceTree = "<group>"; };
+		1DB6F32115127F4F00405ACF /* WHQuestionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHQuestionCell.m; sourceTree = "<group>"; };
 		1DC6558615117C3A00B28B6B /* add_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_button_off.png; sourceTree = "<group>"; };
 		1DC6558815117C4200B28B6B /* add_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_button_off@2x.png"; sourceTree = "<group>"; };
 		1DC6558C1511818200B28B6B /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				1DA2D1A41511B97200B6E165 /* DIOSTaxonomy.h */,
 				1DA2D1A51511B97200B6E165 /* DIOSTaxonomy.m */,
 				1D72159E150EBFC6008F8118 /* Settings.h */,
+				1DB6F31D15127F3300405ACF /* DIOSFile.h */,
+				1DB6F31E15127F3300405ACF /* DIOSFile.m */,
 			);
 			name = "drupal-ios-sdk";
 			sourceTree = "<group>";
@@ -234,8 +239,6 @@
 		1D7CB677150ABE0B001279B0 = {
 			isa = PBXGroup;
 			children = (
-				1DA2D1AA1512463800B6E165 /* WHQuestionCell.h */,
-				1DA2D1AB1512463900B6E165 /* WHQuestionCell.m */,
 				1D7CB68C150ABE0B001279B0 /* Drupal Questions */,
 				1D7CB685150ABE0B001279B0 /* Frameworks */,
 				1D7CB683150ABE0B001279B0 /* Products */,
@@ -263,6 +266,8 @@
 		1D7CB68C150ABE0B001279B0 /* Drupal Questions */ = {
 			isa = PBXGroup;
 			children = (
+				1DB6F32015127F4F00405ACF /* WHQuestionCell.h */,
+				1DB6F32115127F4F00405ACF /* WHQuestionCell.m */,
 				1D72156C150E8575008F8118 /* AFNetworking */,
 				1D721547150E8436008F8118 /* drupal-ios-sdk */,
 				1D7CB695150ABE0B001279B0 /* WHAppDelegate.h */,
@@ -398,7 +403,8 @@
 				1D782837151145EA00880F91 /* DIOSUser.m in Sources */,
 				1DA2D1A61511B97200B6E165 /* DIOSTaxonomy.m in Sources */,
 				1DA2D1A91511CF3600B6E165 /* AddQuestionViewController.m in Sources */,
-				1DA2D1AC1512463900B6E165 /* WHQuestionCell.m in Sources */,
+				1DB6F325151281EB00405ACF /* WHQuestionCell.m in Sources */,
+				1DB6F31F15127F3300405ACF /* DIOSFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

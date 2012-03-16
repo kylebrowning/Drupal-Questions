@@ -11,8 +11,9 @@
 #import "DIOSComment.h"
 #import "DIOSUser.h"
 #import "DIOSTaxonomy.h"
+#import "DIOSFile.h"
 #import "WHQuestionCell.h"
-@interface WHQuestionsRootViewController : UITableViewController <DIOSNodeDelegate, DIOSCommentDelegate, DIOSUserDelegate, DIOSTaxonomyDelegate> {
+@interface WHQuestionsRootViewController : UITableViewController <DIOSNodeDelegate, DIOSCommentDelegate, DIOSUserDelegate, DIOSTaxonomyDelegate, DIOSFileDelegate> {
 }
 
 #pragma mark node delegate methods

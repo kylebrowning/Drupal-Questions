@@ -20,7 +20,6 @@
     [sharedSession setParameterEncoding:AFJSONParameterEncoding];
   });
   return sharedSession;
-  return sharedSession;
 }
 
 - (id)initWithBaseURL:(NSURL *)url {
@@ -37,45 +36,6 @@
 	
   return self;
 }
-- (void)getPath:(NSString *)path 
-     parameters:(NSDictionary *)parameters 
-        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
-{
-	NSURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:parameters];
-  AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
-  [self enqueueHTTPRequestOperation:operation];
-}
-
-- (void)postPath:(NSString *)path 
-      parameters:(NSDictionary *)parameters 
-         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
-{
-	NSURLRequest *request = [self requestWithMethod:@"POST" path:path parameters:parameters];
-	AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
-  [self enqueueHTTPRequestOperation:operation];
-}
-
-- (void)putPath:(NSString *)path 
-     parameters:(NSDictionary *)parameters 
-        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
-{
-	NSURLRequest *request = [self requestWithMethod:@"PUT" path:path parameters:parameters];
-	AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
-  [self enqueueHTTPRequestOperation:operation];
-}
-
-- (void)deletePath:(NSString *)path 
-        parameters:(NSDictionary *)parameters 
-           success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-           failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
-{
-	NSURLRequest *request = [self requestWithMethod:@"DELETE" path:path parameters:parameters];
-	AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
-  [self enqueueHTTPRequestOperation:operation];
-}
 - (void)callDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   if(status) {
     //success!
@@ -85,7 +45,7 @@
     //something happened im sorry!
     //    DLog(@"%@", [[operation response] allHeaderFields]);
     NSString *localizedStatusCodeString = [NSHTTPURLResponse localizedStringForStatusCode:[[operation response] statusCode]];
-    DLog(@"FAILED: %d %@ %@, %@", [[operation response] statusCode], localizedStatusCodeString, [operation responseString], response);
+    DLog(@"FAILED: %d %@ %@ %@ %@", [[operation response] statusCode], localizedStatusCodeString, [operation responseString], response, operation);
   }
 }
 @end

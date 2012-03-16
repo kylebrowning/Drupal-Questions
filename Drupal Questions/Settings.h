@@ -3,6 +3,7 @@
 #define kDiosBaseNode @"node"
 #define kDiosBaseComment @"comment"
 #define kDiosBaseUser @"user"
+#define kDiosBaseFile @"file"
 #define kDiosBaseTaxonmyTerm @"taxonomy_term"
 #define kDiosBaseTaxonmyVocabulary @"taxonomy_vocabulary"
 

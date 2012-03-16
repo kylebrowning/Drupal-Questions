@@ -7,7 +7,7 @@
 //
 
 #import "DIOSNode.h"
-
+#import "AFJSONUtilities.h"
 @implementation DIOSNode
 
 @synthesize delegate = _delegate;
@@ -44,10 +44,6 @@
     }
   }];
 }
-- (void)nodeGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-
 #pragma mark nodeUpdates
 - (void)nodeSave:(NSDictionary *)node {
   [[DIOSSession sharedSession] postPath:[NSString stringWithFormat:@"%@/%@", kDiosEndpoint, kDiosBaseNode] parameters:node success:^(__unused AFHTTPRequestOperation *operation, id JSON) {
@@ -63,9 +59,6 @@
       DLog(@"I couldnt find the delegate and one was set %@ for this post so my response will never be used.", _delegate);
     }
   }];
-}
-- (void)nodeSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
 }
 
 #pragma mark nodeUpdate
@@ -84,9 +77,6 @@
     }
   }];
 }
-- (void)nodeUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
 
 #pragma mark nodeDelete
 - (void)nodeDelete:(NSDictionary *)node {
@@ -103,9 +93,6 @@
       DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
     }
   }];
-}
-- (void)nodeDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
 }
 #pragma mark nodeIndex
 //Simpler method if you didnt want to build the params :)
@@ -133,7 +120,57 @@
     }
   }];
 }
+#pragma mark nodeAttachFile
+- (void)nodeAttachFile:(NSDictionary *)params {
+  NSMutableURLRequest *request = [[DIOSSession sharedSession] multipartFormRequestWithMethod:@"POST" path:[NSString stringWithFormat:@"%@/%@/%@/attach_file?field_name=%@", kDiosEndpoint, kDiosBaseNode, [params objectForKey:@"nid"], [params objectForKey:@"field_name"]] parameters:params constructingBodyWithBlock: ^(id <AFMultipartFormData>formData) {
+    [formData appendPartWithFileData:[params objectForKey:@"fileData"] name:[params objectForKey:@"name"] fileName:[params objectForKey:@"fileName"] mimeType:[params objectForKey:@"mimetype"]];
+  }];
+  
+  AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+  [operation setUploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+    NSLog(@"Sent %d of %d bytes", totalBytesWritten, totalBytesExpectedToWrite);
+  }];
+  [operation setCompletionBlockWithSuccess:^(__unused AFHTTPRequestOperation *operation, id JSON) {
+    NSError *error = nil;
+    JSON = AFJSONDecode(JSON, &error);
+    if(!error) {
+      if ([_delegate respondsToSelector:@selector(nodeAttachFileDidFinish:operation:response:error:)]) {
+        [_delegate nodeAttachFileDidFinish:YES operation:operation response:JSON error:nil];
+      } else {
+        DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
+      }
+    } else {
+      if ([_delegate respondsToSelector:@selector(nodeAttachFileDidFinish:operation:response:error:)]) {
+        [_delegate nodeAttachFileDidFinish:NO operation:operation response:nil error:error];
+      } else {
+        DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
+      }
+    }
+  } failure:^(__unused AFHTTPRequestOperation *operation, NSError *error) {
+    if ([_delegate respondsToSelector:@selector(nodeAttachFileDidFinish:operation:response:error:)]) {
+      [_delegate nodeAttachFileDidFinish:NO operation:operation response:nil error:error];
+    } else {
+      DLog(@"I couldnt find the delegate and one was set %@ for this delete so my response will never be used.", _delegate);
+    }
+  }];
+  [operation start];
+}
+- (void)nodeGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+}
+- (void)nodeSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+}
+- (void)nodeUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+}
+- (void)nodeDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+}
 - (void)nodeIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+}
+- (void)nodeAttachFileDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
 }
 @end

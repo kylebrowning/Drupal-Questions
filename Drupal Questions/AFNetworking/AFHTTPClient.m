@@ -405,8 +405,8 @@ static void AFReachabilityCallback(SCNetworkReachabilityRef __unused target, SCN
             data = value;
         } else {
             data = [[value description] dataUsingEncoding:self.stringEncoding];
+          NSLog(@"%@ , %@", [[NSString alloc] initWithData:data encoding:self.stringEncoding], key);
         }
-        
         [formData appendPartWithFormData:data name:[key description]];
     }];
     

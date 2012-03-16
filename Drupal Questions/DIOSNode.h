@@ -15,6 +15,8 @@
 - (void)nodeUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error;
 - (void)nodeDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error;
 - (void)nodeIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error;
+- (void)nodeAttachFileDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error;
+
 @end
 
 @interface DIOSNode : NSObject <DIOSNodeDelegate>{
@@ -28,4 +30,5 @@
 - (void)nodeDelete:(NSDictionary *)node;
 - (void)nodeIndexWithPage:(NSString *)page fields:(NSString *)fields parameters:(NSArray *)parameteres pageSize:(NSString *)pageSize;
 - (void)nodeIndex:(NSDictionary *)params;
+- (void)nodeAttachFile:(NSDictionary *)params;
 @end

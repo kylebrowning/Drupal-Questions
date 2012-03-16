@@ -33,7 +33,7 @@
   [a1 setImage:[UIImage imageNamed:@"back_button_on.png"] forState:UIControlStateHighlighted];
   UIBarButtonItem *random1 = [[UIBarButtonItem alloc] initWithCustomView:a1];
   UIButton *a2 = [UIButton buttonWithType:UIButtonTypeCustom];
-  [a2 setFrame:CGRectMake(0.0f, 0.0f, 76.0f, 32.0f)];
+  [a2 setFrame:CGRectMake(0.0f, 0.0f, 55.0f, 32.0f)];
   [a2 addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
   [a2 setImage:[UIImage imageNamed:@"done_button_off.png"] forState:UIControlStateNormal];
   [a2 setImage:[UIImage imageNamed:@"done_button_on.png"] forState:UIControlStateHighlighted];

@@ -7,7 +7,6 @@
 //
 
 #import "WHQuestionsRootViewController.h"
-
 @interface WHQuestionsRootViewController ()
 
 @end
@@ -20,20 +19,29 @@
 }
 - (void)testNode:(id)sender {
   DIOSNode *node = [[DIOSNode alloc] initWithDelegate:self];
-  NSMutableDictionary *nodeData = [NSMutableDictionary new];
-  [nodeData setValue:@"testtitle" forKey:@"title"];
-  NSDictionary *bodyValues = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"bodsdfasdfasdy", nil] forKeys:[NSArray arrayWithObjects:@"value", nil]];
-  NSDictionary *languageDict = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:bodyValues] forKey:@"und"];
-  [nodeData setValue:languageDict forKey:@"body"];
-  [nodeData setValue:@"article" forKey:@"type"];
-  [nodeData setValue:@"und" forKey:@"language"];
-  //  [nodeData setValue:@"admin" forKey:@"name"];
-  //  
-  //  [nodeData setValue:@"7" forKey:@"uid"];
-  //  [node nodeGet:nodeData];
-  //  [node nodeUpdate:nodeData];
-  //  [node nodeDelete:nodeData];
-  [node nodeSave:nodeData];
+//  NSMutableDictionary *nodeData = [NSMutableDictionary new];
+//  [nodeData setValue:@"testtitle" forKey:@"title"];
+//  NSDictionary *bodyValues = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"bodsdfasdfasdy", nil] forKeys:[NSArray arrayWithObjects:@"value", nil]];
+//  NSDictionary *languageDict = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:bodyValues] forKey:@"und"];
+//  [nodeData setValue:languageDict forKey:@"body"];
+//  [nodeData setValue:@"article" forKey:@"type"];
+//  [nodeData setValue:@"und" forKey:@"language"];
+//  //  [nodeData setValue:@"admin" forKey:@"name"];
+//  //  
+//  //  [nodeData setValue:@"7" forKey:@"uid"];
+//  //  [node nodeGet:nodeData];
+//  //  [node nodeUpdate:nodeData];
+//  //  [node nodeDelete:nodeData];
+//  [node nodeSave:nodeData];
+  NSMutableDictionary *fileData = [NSMutableDictionary new];
+  NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"bg.png"], 0.5);
+  [fileData setValue:@"temp" forKey:@"name"];
+  [fileData setValue:@"temp.jpg" forKey:@"fileName"];
+  [fileData setValue:imageData forKey:@"fileData"];
+  [fileData setValue:@"image/png" forKey:@"mimetype"];
+  [fileData setValue:@"field_image" forKey:@"field_name"];
+  [fileData setValue:@"4" forKey:@"nid"];
+  [node nodeAttachFile:fileData];
   //[node nodeIndexWithPage:@"0" fields:nil parameters:nil pageSize:@"5"];
 }
 
@@ -63,8 +71,9 @@
 //  [user userIndexWithPage:@"0" fields:nil parameters:nil pageSize:@"2"];
 //  [user userDelete:userData];
   
-  //[user userLogin:userData];
-  [user userLogout];
+  [user userLogin:userData];
+  [user userLoginWithUsername:@"username" andPassword:@"password"];
+  //[user userLogout];
 }
 - (void)testTaxonmy:(id)sender {
   DIOSTaxonomy *taxonomy = [[DIOSTaxonomy alloc] init];
@@ -72,9 +81,28 @@
   //  [taxonomy selectNodesWithTid:@"1" andLimit:@"2" andPager:nil andOrder:nil];
   [taxonomy getTermWithTid:@"2"];
 }
-- (IBAction)test:(id)sender {
+- (void)testFile:(id)sender {
+  DIOSFile *file = [[DIOSFile alloc] initWithDelegate:self];
+  NSMutableDictionary *fileData = [NSMutableDictionary new];
+  [fileData setValue:@"4" forKey:@"fid"];
+    [fileData setValue:@"0" forKey:@"file_contents"];
+  [file fileGet:fileData];
+  
+}
+- (IBAction)addQuestion:(id)sender {
   [self performSegueWithIdentifier:@"addQuestion" sender:sender];
 }
+- (IBAction)test:(id)sender {
+  DIOSNode *node = [[DIOSNode alloc] initWithDelegate:self];
+  NSMutableDictionary *nodeData = [NSMutableDictionary new];
+  [nodeData setValue:@"9" forKey:@"nid"];
+  [node nodeGet:nodeData];
+}
+- (void)fileGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+
+}
+
 - (void)getTreeDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
 }
@@ -193,44 +221,6 @@
   [[cell authorName] setText:@"Kyle Browning"];
   return cell;
 }
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }   
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
 
 #pragma mark - Table view delegate
 
