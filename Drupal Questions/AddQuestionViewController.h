@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
+#import "DIOSNode.h"
+@interface AddQuestionViewController : UIViewController <MBProgressHUDDelegate, DIOSNodeDelegate> {
+  	MBProgressHUD *HUD;
+}
 
-@interface AddQuestionViewController : UITableViewController
-
+@property (weak, nonatomic) IBOutlet UITextField *questionTitle;
+@property (weak, nonatomic) IBOutlet UITextField *sessionTItle;
+@property (weak, nonatomic) IBOutlet UITextView *questionBody;
 @end

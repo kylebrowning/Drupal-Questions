@@ -12,156 +12,58 @@
 @end
 
 @implementation WHQuestionsRootViewController
-
+@synthesize questions = _questions;
 
 - (void)action:(id)sender {
   
 }
-- (void)testNode:(id)sender {
-  DIOSNode *node = [[DIOSNode alloc] initWithDelegate:self];
-//  NSMutableDictionary *nodeData = [NSMutableDictionary new];
-//  [nodeData setValue:@"testtitle" forKey:@"title"];
-//  NSDictionary *bodyValues = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"bodsdfasdfasdy", nil] forKeys:[NSArray arrayWithObjects:@"value", nil]];
-//  NSDictionary *languageDict = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:bodyValues] forKey:@"und"];
-//  [nodeData setValue:languageDict forKey:@"body"];
-//  [nodeData setValue:@"article" forKey:@"type"];
-//  [nodeData setValue:@"und" forKey:@"language"];
-//  //  [nodeData setValue:@"admin" forKey:@"name"];
-//  //  
-//  //  [nodeData setValue:@"7" forKey:@"uid"];
-//  //  [node nodeGet:nodeData];
-//  //  [node nodeUpdate:nodeData];
-//  //  [node nodeDelete:nodeData];
-//  [node nodeSave:nodeData];
-  NSMutableDictionary *fileData = [NSMutableDictionary new];
-  NSData *imageData = UIImageJPEGRepresentation([UIImage imageNamed:@"bg.png"], 0.5);
-  [fileData setValue:@"temp" forKey:@"name"];
-  [fileData setValue:@"temp.jpg" forKey:@"fileName"];
-  [fileData setValue:imageData forKey:@"fileData"];
-  [fileData setValue:@"image/png" forKey:@"mimetype"];
-  [fileData setValue:@"field_image" forKey:@"field_name"];
-  [fileData setValue:@"4" forKey:@"nid"];
-  [node nodeAttachFile:fileData];
-  //[node nodeIndexWithPage:@"0" fields:nil parameters:nil pageSize:@"5"];
-}
-
-- (void)testComment:(id)sender {
-  DIOSComment *comment = [[DIOSComment alloc] init];
-  //  NSMutableDictionary *commentData = [NSMutableDictionary new];
-  //  NSDictionary *bodyValues = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"commentbody", nil] forKeys:[NSArray arrayWithObjects:@"value", nil]];
-  //  NSDictionary *languageDict = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:bodyValues] forKey:@"und"];
-  //  [commentData setValue:languageDict forKey:@"comment_body"];
-  //  [commentData setValue:@"subjecte is changed" forKey:@"subject"];
-  //  [commentData setValue:@"und" forKey:@"language"];
-  //  //  [commentData setValue:@"2" forKey:@"cid"];
-  [comment commentIndexWithPage:@"0" fields:nil parameters:nil pageSize:@"2"];
-  
-}
-
-- (void)testUser:(id)sender {
-  DIOSUser *user = [[DIOSUser alloc] initWithDelegate:self];
-  NSMutableDictionary *userData = [NSMutableDictionary new];
-  [userData setValue:@"test" forKey:@"name"];
-  [userData setValue:@"test2@gmail.com" forKey:@"mail"];
-  [userData setValue:@"test" forKey:@"pass"];
-  //[userData setValue:@"56" forKey:@"uid"];
-  //[user userSave:userData];
-//  [user userGet:userData];
-//  [user userUpdate:userData];
-//  [user userIndexWithPage:@"0" fields:nil parameters:nil pageSize:@"2"];
-//  [user userDelete:userData];
-  
-  [user userLogin:userData];
-  [user userLoginWithUsername:@"username" andPassword:@"password"];
-  //[user userLogout];
-}
-- (void)testTaxonmy:(id)sender {
-  DIOSTaxonomy *taxonomy = [[DIOSTaxonomy alloc] init];
-  //[taxonomy getTreeWithVid:@"1" withParent:nil andMaxDepth:nil];
-  //  [taxonomy selectNodesWithTid:@"1" andLimit:@"2" andPager:nil andOrder:nil];
-  [taxonomy getTermWithTid:@"2"];
-}
-- (void)testFile:(id)sender {
-  DIOSFile *file = [[DIOSFile alloc] initWithDelegate:self];
-  NSMutableDictionary *fileData = [NSMutableDictionary new];
-  [fileData setValue:@"4" forKey:@"fid"];
-    [fileData setValue:@"0" forKey:@"file_contents"];
-  [file fileGet:fileData];
-  
+- (void) pullQuestions {
+  DIOSView *view = [[DIOSView alloc] initWithDelegate:self];
+  NSMutableDictionary *viewParams = [NSMutableDictionary new];
+  [viewParams setValue:@"questions_view" forKey:@"view_name"];
+  [view viewGet:viewParams];
 }
 - (IBAction)addQuestion:(id)sender {
   [self performSegueWithIdentifier:@"addQuestion" sender:sender];
 }
-- (IBAction)test:(id)sender {
-  DIOSNode *node = [[DIOSNode alloc] initWithDelegate:self];
-  NSMutableDictionary *nodeData = [NSMutableDictionary new];
-  [nodeData setValue:@"9" forKey:@"nid"];
-  [node nodeGet:nodeData];
-}
-- (void)fileGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-
-}
-
-- (void)getTreeDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)selectNodesDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)getTermDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+- (IBAction)showSettings:(id)sender {
+  [self performSegueWithIdentifier:@"showSettings" sender:sender];
 }
 - (void)userGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+  
 }
 - (void)userSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+  
 }
 - (void)userUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+  
 }
 - (void)userDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+  
 }
 - (void)userIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+  
 }
 - (void)userLoginDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  DLog(@"%@, %d", [[DIOSSession sharedSession] user], status);
+  
 }
 - (void)userLogoutDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  DLog(@"%@, %d", [[DIOSSession sharedSession] user], status);
+  
 }
-- (void)commentGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error]; 
+- (void)viewGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
+  _questions = response;
+  [self.tableView reloadData];
+  [HUD hide:YES];
 }
-- (void)commentSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)commentUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)commentDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)commentIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];  
-}
-- (void)nodeIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)nodeGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)nodeSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)nodeUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError *)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
-}
-- (void)nodeDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError *)error {
-  [[[DIOSSession sharedSession] delegate] callDidFinish:status operation:operation response:response error:error];
+- (void) viewDidAppear:(BOOL)animated {
+  HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+	[self.navigationController.view addSubview:HUD];
+	
+  HUD.delegate = self;
+  HUD.labelText = @"Loading";
+	
+  [HUD show:YES];
+  [self pullQuestions];
 }
 - (void)viewDidLoad
 {
@@ -171,18 +73,27 @@
   
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+  UIButton *a1 = [UIButton buttonWithType:UIButtonTypeCustom];
+  [a1 setFrame:CGRectMake(0.0f, 0.0f, 34.0f, 32.0f)];
+  [a1 addTarget:self action:@selector(showSettings:) forControlEvents:UIControlEventTouchUpInside];
+  [a1 setImage:[UIImage imageNamed:@"settings_button_off.png"] forState:UIControlStateNormal];
+  [a1 setImage:[UIImage imageNamed:@"settings_button_on.png"] forState:UIControlStateHighlighted];
+  UIBarButtonItem *random = [[UIBarButtonItem alloc] initWithCustomView:a1];
+  
   UIButton *a2 = [UIButton buttonWithType:UIButtonTypeCustom];
   [a2 setFrame:CGRectMake(0.0f, 0.0f, 34.0f, 32.0f)];
-  [a2 addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
+  [a2 addTarget:self action:@selector(addQuestion:) forControlEvents:UIControlEventTouchUpInside];
   [a2 setImage:[UIImage imageNamed:@"add_button_off.png"] forState:UIControlStateNormal];
   [a2 setImage:[UIImage imageNamed:@"add_button_on.png"] forState:UIControlStateHighlighted];
   UIBarButtonItem *random2 = [[UIBarButtonItem alloc] initWithCustomView:a2];
   
   self.navigationItem.rightBarButtonItem = random2;
+  self.navigationItem.leftBarButtonItem = random;
   [self.tableView setDelegate:self];
   [self.tableView setDataSource:self];
   [self setTitle:@"Questions"];
+  [self setQuestions:[NSArray new]];
+  [self pullQuestions];
 }
 
 - (void)viewDidUnload
@@ -207,7 +118,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
   // Return the number of rows in the section.
-  return 20;
+  return [_questions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -215,10 +126,12 @@
   static NSString *CellIdentifier = @"questioncell";
   WHQuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   // Configure the cell...
-  [[cell questionTitle] setText:@"Services question"];
-  [[cell sessionName] setText:@"Native Mobile Application Development"];
-  [[cell commentCount] setText:@"2"];
-  [[cell authorName] setText:@"Kyle Browning"];
+  NSDictionary *node = [_questions  objectAtIndex:indexPath.row];
+  [[cell questionTitle] setText:[node objectForKey:@"node_title"]];
+  [[cell sessionName] setText:[[[[node objectForKey:@"field_field_session_name"] objectAtIndex:0] objectForKey:@"raw"] objectForKey:@"value"]];
+  [[cell commentCount] setText:[node objectForKey:@"node_comment_statistics_comment_count"]];
+  [[cell questionBody] setText:[[[[node objectForKey:@"field_body"] objectAtIndex:0] objectForKey:@"raw"] objectForKey:@"value"]];
+  [[cell authorName] setText:[node objectForKey:@"users_node_name"]];
   return cell;
 }
 

@@ -53,6 +53,39 @@
 		1DC655A715118ECE00B28B6B /* back_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC655A315118ECE00B28B6B /* back_button_off@2x.png */; };
 		1DC655A815118ECE00B28B6B /* back_button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC655A415118ECE00B28B6B /* back_button_on.png */; };
 		1DC655A915118ECE00B28B6B /* back_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DC655A515118ECE00B28B6B /* back_button_on@2x.png */; };
+		1DCAABE9151457AF00727BF4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCAABE3151451DB00727BF4 /* MBProgressHUD.m */; };
+		1DCAABF11514618300727BF4 /* settings_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABEE1514618300727BF4 /* settings_button_off.png */; };
+		1DCAABF21514618300727BF4 /* settings_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABEF1514618300727BF4 /* settings_button_off@2x.png */; };
+		1DCAABF31514618300727BF4 /* settings_button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABF01514618300727BF4 /* settings_button_on.png */; };
+		1DCAABF51514619000727BF4 /* settings_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABF41514619000727BF4 /* settings_button_on@2x.png */; };
+		1DCAABFA151464D400727BF4 /* add_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABF6151464D400727BF4 /* add_bg.png */; };
+		1DCAABFB151464D400727BF4 /* add_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABF7151464D400727BF4 /* add_bg@2x.png */; };
+		1DCAABFC151464D400727BF4 /* hr.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABF8151464D400727BF4 /* hr.png */; };
+		1DCAABFD151464D400727BF4 /* hr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABF9151464D400727BF4 /* hr@2x.png */; };
+		1DCAAC0A15146B9200727BF4 /* login_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABFE15146B9000727BF4 /* login_button_off.png */; };
+		1DCAAC0B15146B9200727BF4 /* login_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAABFF15146B9100727BF4 /* login_button_off@2x.png */; };
+		1DCAAC0C15146B9200727BF4 /* login_button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0015146B9100727BF4 /* login_button_on.png */; };
+		1DCAAC0D15146B9200727BF4 /* login_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0115146B9100727BF4 /* login_button_on@2x.png */; };
+		1DCAAC0E15146B9200727BF4 /* logout_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0215146B9100727BF4 /* logout_button_off.png */; };
+		1DCAAC0F15146B9200727BF4 /* logout_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0315146B9100727BF4 /* logout_button_off@2x.png */; };
+		1DCAAC1015146B9200727BF4 /* logout_button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0415146B9100727BF4 /* logout_button_on.png */; };
+		1DCAAC1115146B9200727BF4 /* logout_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0515146B9100727BF4 /* logout_button_on@2x.png */; };
+		1DCAAC1215146B9200727BF4 /* register_button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0615146B9100727BF4 /* register_button_off.png */; };
+		1DCAAC1315146B9200727BF4 /* register_button_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0715146B9200727BF4 /* register_button_off@2x.png */; };
+		1DCAAC1415146B9200727BF4 /* register_button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0815146B9200727BF4 /* register_button_on.png */; };
+		1DCAAC1515146B9200727BF4 /* register_button_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DCAAC0915146B9200727BF4 /* register_button_on@2x.png */; };
+		1DCAAC1815146C0300727BF4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCAAC1715146C0300727BF4 /* SettingsViewController.m */; };
+		1DCAAC1B15146C8D00727BF4 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DCAAC1A15146C8B00727BF4 /* RegisterViewController.m */; };
+		1DE8145B1513F22B00DB291D /* DIOSComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8144D1513F22B00DB291D /* DIOSComment.m */; };
+		1DE8145C1513F22B00DB291D /* DIOSFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8144F1513F22B00DB291D /* DIOSFile.m */; };
+		1DE8145D1513F22B00DB291D /* DIOSNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE814511513F22B00DB291D /* DIOSNode.m */; };
+		1DE8145E1513F22B00DB291D /* DIOSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE814531513F22B00DB291D /* DIOSSession.m */; };
+		1DE8145F1513F22B00DB291D /* DIOSTaxonomy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE814551513F22B00DB291D /* DIOSTaxonomy.m */; };
+		1DE814601513F22B00DB291D /* DIOSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE814571513F22B00DB291D /* DIOSUser.m */; };
+		1DE814611513F22B00DB291D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1DE814581513F22B00DB291D /* LICENSE */; };
+		1DE814621513F22B00DB291D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1DE814591513F22B00DB291D /* README.md */; };
+		1DE8146915140C8F00DB291D /* DIOSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8146815140C8F00DB291D /* DIOSView.m */; };
+		1DE8146C151412A200DB291D /* WHDIOSTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE8146B151412A100DB291D /* WHDIOSTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +153,51 @@
 		1DC655A315118ECE00B28B6B /* back_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button_off@2x.png"; sourceTree = "<group>"; };
 		1DC655A415118ECE00B28B6B /* back_button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_on.png; sourceTree = "<group>"; };
 		1DC655A515118ECE00B28B6B /* back_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button_on@2x.png"; sourceTree = "<group>"; };
+		1DCAABE2151451DB00727BF4 /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
+		1DCAABE3151451DB00727BF4 /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
+		1DCAABEE1514618300727BF4 /* settings_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_button_off.png; sourceTree = "<group>"; };
+		1DCAABEF1514618300727BF4 /* settings_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_button_off@2x.png"; sourceTree = "<group>"; };
+		1DCAABF01514618300727BF4 /* settings_button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_button_on.png; sourceTree = "<group>"; };
+		1DCAABF41514619000727BF4 /* settings_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings_button_on@2x.png"; sourceTree = "<group>"; };
+		1DCAABF6151464D400727BF4 /* add_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_bg.png; sourceTree = "<group>"; };
+		1DCAABF7151464D400727BF4 /* add_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_bg@2x.png"; sourceTree = "<group>"; };
+		1DCAABF8151464D400727BF4 /* hr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hr.png; sourceTree = "<group>"; };
+		1DCAABF9151464D400727BF4 /* hr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hr@2x.png"; sourceTree = "<group>"; };
+		1DCAABFE15146B9000727BF4 /* login_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_off.png; sourceTree = "<group>"; };
+		1DCAABFF15146B9100727BF4 /* login_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_button_off@2x.png"; sourceTree = "<group>"; };
+		1DCAAC0015146B9100727BF4 /* login_button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_button_on.png; sourceTree = "<group>"; };
+		1DCAAC0115146B9100727BF4 /* login_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_button_on@2x.png"; sourceTree = "<group>"; };
+		1DCAAC0215146B9100727BF4 /* logout_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout_button_off.png; sourceTree = "<group>"; };
+		1DCAAC0315146B9100727BF4 /* logout_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout_button_off@2x.png"; sourceTree = "<group>"; };
+		1DCAAC0415146B9100727BF4 /* logout_button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout_button_on.png; sourceTree = "<group>"; };
+		1DCAAC0515146B9100727BF4 /* logout_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout_button_on@2x.png"; sourceTree = "<group>"; };
+		1DCAAC0615146B9100727BF4 /* register_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register_button_off.png; sourceTree = "<group>"; };
+		1DCAAC0715146B9200727BF4 /* register_button_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_button_off@2x.png"; sourceTree = "<group>"; };
+		1DCAAC0815146B9200727BF4 /* register_button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register_button_on.png; sourceTree = "<group>"; };
+		1DCAAC0915146B9200727BF4 /* register_button_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_button_on@2x.png"; sourceTree = "<group>"; };
+		1DCAAC1615146C0300727BF4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		1DCAAC1715146C0300727BF4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		1DCAAC1915146C8B00727BF4 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		1DCAAC1A15146C8B00727BF4 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		1DE8144C1513F22B00DB291D /* DIOSComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSComment.h; sourceTree = "<group>"; };
+		1DE8144D1513F22B00DB291D /* DIOSComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSComment.m; sourceTree = "<group>"; };
+		1DE8144E1513F22B00DB291D /* DIOSFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSFile.h; sourceTree = "<group>"; };
+		1DE8144F1513F22B00DB291D /* DIOSFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSFile.m; sourceTree = "<group>"; };
+		1DE814501513F22B00DB291D /* DIOSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSNode.h; sourceTree = "<group>"; };
+		1DE814511513F22B00DB291D /* DIOSNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSNode.m; sourceTree = "<group>"; };
+		1DE814521513F22B00DB291D /* DIOSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSSession.h; sourceTree = "<group>"; };
+		1DE814531513F22B00DB291D /* DIOSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSSession.m; sourceTree = "<group>"; };
+		1DE814541513F22B00DB291D /* DIOSTaxonomy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSTaxonomy.h; sourceTree = "<group>"; };
+		1DE814551513F22B00DB291D /* DIOSTaxonomy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSTaxonomy.m; sourceTree = "<group>"; };
+		1DE814561513F22B00DB291D /* DIOSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSUser.h; sourceTree = "<group>"; };
+		1DE814571513F22B00DB291D /* DIOSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSUser.m; sourceTree = "<group>"; };
+		1DE814581513F22B00DB291D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1DE814591513F22B00DB291D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1DE8145A1513F22B00DB291D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		1DE8146715140C8F00DB291D /* DIOSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIOSView.h; sourceTree = "<group>"; };
+		1DE8146815140C8F00DB291D /* DIOSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIOSView.m; sourceTree = "<group>"; };
+		1DE8146A151412A100DB291D /* WHDIOSTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHDIOSTest.h; sourceTree = "<group>"; };
+		1DE8146B151412A100DB291D /* WHDIOSTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHDIOSTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +245,26 @@
 		1D782838151169D900880F91 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1DCAABFE15146B9000727BF4 /* login_button_off.png */,
+				1DCAABFF15146B9100727BF4 /* login_button_off@2x.png */,
+				1DCAAC0015146B9100727BF4 /* login_button_on.png */,
+				1DCAAC0115146B9100727BF4 /* login_button_on@2x.png */,
+				1DCAAC0215146B9100727BF4 /* logout_button_off.png */,
+				1DCAAC0315146B9100727BF4 /* logout_button_off@2x.png */,
+				1DCAAC0415146B9100727BF4 /* logout_button_on.png */,
+				1DCAAC0515146B9100727BF4 /* logout_button_on@2x.png */,
+				1DCAAC0615146B9100727BF4 /* register_button_off.png */,
+				1DCAAC0715146B9200727BF4 /* register_button_off@2x.png */,
+				1DCAAC0815146B9200727BF4 /* register_button_on.png */,
+				1DCAAC0915146B9200727BF4 /* register_button_on@2x.png */,
+				1DCAABF6151464D400727BF4 /* add_bg.png */,
+				1DCAABF7151464D400727BF4 /* add_bg@2x.png */,
+				1DCAABF8151464D400727BF4 /* hr.png */,
+				1DCAABF9151464D400727BF4 /* hr@2x.png */,
+				1DCAABF41514619000727BF4 /* settings_button_on@2x.png */,
+				1DCAABEE1514618300727BF4 /* settings_button_off.png */,
+				1DCAABEF1514618300727BF4 /* settings_button_off@2x.png */,
+				1DCAABF01514618300727BF4 /* settings_button_on.png */,
 				1DC655A215118ECE00B28B6B /* back_button_off.png */,
 				1DC655A315118ECE00B28B6B /* back_button_off@2x.png */,
 				1DC655A415118ECE00B28B6B /* back_button_on.png */,
@@ -227,8 +325,11 @@
 		1D7CB68C150ABE0B001279B0 /* Drupal Questions */ = {
 			isa = PBXGroup;
 			children = (
+				1DE8144B1513F22B00DB291D /* drupal-ios-sdk */,
 				1DB6F32015127F4F00405ACF /* WHQuestionCell.h */,
 				1DB6F32115127F4F00405ACF /* WHQuestionCell.m */,
+				1DCAABE2151451DB00727BF4 /* MBProgressHUD.h */,
+				1DCAABE3151451DB00727BF4 /* MBProgressHUD.m */,
 				1D72156C150E8575008F8118 /* AFNetworking */,
 				1D7CB695150ABE0B001279B0 /* WHAppDelegate.h */,
 				1D7CB696150ABE0B001279B0 /* WHAppDelegate.m */,
@@ -238,6 +339,12 @@
 				1D721594150E99AC008F8118 /* WHQuestionsRootViewController.m */,
 				1DA2D1A71511CF3500B6E165 /* AddQuestionViewController.h */,
 				1DA2D1A81511CF3500B6E165 /* AddQuestionViewController.m */,
+				1DCAAC1615146C0300727BF4 /* SettingsViewController.h */,
+				1DCAAC1715146C0300727BF4 /* SettingsViewController.m */,
+				1DCAAC1915146C8B00727BF4 /* RegisterViewController.h */,
+				1DCAAC1A15146C8B00727BF4 /* RegisterViewController.m */,
+				1DE8146A151412A100DB291D /* WHDIOSTest.h */,
+				1DE8146B151412A100DB291D /* WHDIOSTest.m */,
 			);
 			path = "Drupal Questions";
 			sourceTree = "<group>";
@@ -253,6 +360,30 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		1DE8144B1513F22B00DB291D /* drupal-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				1DE8144C1513F22B00DB291D /* DIOSComment.h */,
+				1DE8144D1513F22B00DB291D /* DIOSComment.m */,
+				1DE8144E1513F22B00DB291D /* DIOSFile.h */,
+				1DE8144F1513F22B00DB291D /* DIOSFile.m */,
+				1DE814501513F22B00DB291D /* DIOSNode.h */,
+				1DE814511513F22B00DB291D /* DIOSNode.m */,
+				1DE814521513F22B00DB291D /* DIOSSession.h */,
+				1DE814531513F22B00DB291D /* DIOSSession.m */,
+				1DE814541513F22B00DB291D /* DIOSTaxonomy.h */,
+				1DE814551513F22B00DB291D /* DIOSTaxonomy.m */,
+				1DE814561513F22B00DB291D /* DIOSUser.h */,
+				1DE814571513F22B00DB291D /* DIOSUser.m */,
+				1DE8146715140C8F00DB291D /* DIOSView.h */,
+				1DE8146815140C8F00DB291D /* DIOSView.m */,
+				1DE814581513F22B00DB291D /* LICENSE */,
+				1DE814591513F22B00DB291D /* README.md */,
+				1DE8145A1513F22B00DB291D /* Settings.h */,
+			);
+			path = "drupal-ios-sdk";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -334,6 +465,28 @@
 				1DA2D1B4151250BD00B6E165 /* done_button_on@2x.png in Resources */,
 				1DA2D1B7151251FF00B6E165 /* cell_bg.png in Resources */,
 				1DA2D1B8151251FF00B6E165 /* cell_bg@2x.png in Resources */,
+				1DE814611513F22B00DB291D /* LICENSE in Resources */,
+				1DE814621513F22B00DB291D /* README.md in Resources */,
+				1DCAABF11514618300727BF4 /* settings_button_off.png in Resources */,
+				1DCAABF21514618300727BF4 /* settings_button_off@2x.png in Resources */,
+				1DCAABF31514618300727BF4 /* settings_button_on.png in Resources */,
+				1DCAABF51514619000727BF4 /* settings_button_on@2x.png in Resources */,
+				1DCAABFA151464D400727BF4 /* add_bg.png in Resources */,
+				1DCAABFB151464D400727BF4 /* add_bg@2x.png in Resources */,
+				1DCAABFC151464D400727BF4 /* hr.png in Resources */,
+				1DCAABFD151464D400727BF4 /* hr@2x.png in Resources */,
+				1DCAAC0A15146B9200727BF4 /* login_button_off.png in Resources */,
+				1DCAAC0B15146B9200727BF4 /* login_button_off@2x.png in Resources */,
+				1DCAAC0C15146B9200727BF4 /* login_button_on.png in Resources */,
+				1DCAAC0D15146B9200727BF4 /* login_button_on@2x.png in Resources */,
+				1DCAAC0E15146B9200727BF4 /* logout_button_off.png in Resources */,
+				1DCAAC0F15146B9200727BF4 /* logout_button_off@2x.png in Resources */,
+				1DCAAC1015146B9200727BF4 /* logout_button_on.png in Resources */,
+				1DCAAC1115146B9200727BF4 /* logout_button_on@2x.png in Resources */,
+				1DCAAC1215146B9200727BF4 /* register_button_off.png in Resources */,
+				1DCAAC1315146B9200727BF4 /* register_button_off@2x.png in Resources */,
+				1DCAAC1415146B9200727BF4 /* register_button_on.png in Resources */,
+				1DCAAC1515146B9200727BF4 /* register_button_on@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DCAABE9151457AF00727BF4 /* MBProgressHUD.m in Sources */,
 				1D7CB693150ABE0B001279B0 /* main.m in Sources */,
 				1D7CB697150ABE0B001279B0 /* WHAppDelegate.m in Sources */,
 				1D721582150E8575008F8118 /* AFHTTPClient.m in Sources */,
@@ -359,6 +513,16 @@
 				1D721595150E99AC008F8118 /* WHQuestionsRootViewController.m in Sources */,
 				1DA2D1A91511CF3600B6E165 /* AddQuestionViewController.m in Sources */,
 				1DB6F325151281EB00405ACF /* WHQuestionCell.m in Sources */,
+				1DE8145B1513F22B00DB291D /* DIOSComment.m in Sources */,
+				1DE8145C1513F22B00DB291D /* DIOSFile.m in Sources */,
+				1DE8145D1513F22B00DB291D /* DIOSNode.m in Sources */,
+				1DE8145E1513F22B00DB291D /* DIOSSession.m in Sources */,
+				1DE8145F1513F22B00DB291D /* DIOSTaxonomy.m in Sources */,
+				1DE814601513F22B00DB291D /* DIOSUser.m in Sources */,
+				1DE8146915140C8F00DB291D /* DIOSView.m in Sources */,
+				1DE8146C151412A200DB291D /* WHDIOSTest.m in Sources */,
+				1DCAAC1815146C0300727BF4 /* SettingsViewController.m in Sources */,
+				1DCAAC1B15146C8D00727BF4 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
