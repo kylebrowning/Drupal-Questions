@@ -54,7 +54,7 @@
   [self createQuestion];
 }
 - (void)createQuestion {
-  DIOSNode *node = [[DIOSNode alloc] initWithDelegate:self];
+  DIOSNode *node = [[DIOSNode alloc] init];
   NSMutableDictionary *nodeData = [NSMutableDictionary new];
   [nodeData setValue:[questionTitle text] forKey:@"title"];
   NSDictionary *bodyValues = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:[questionBody text], nil] forKeys:[NSArray arrayWithObjects:@"value", nil]];
@@ -65,7 +65,13 @@
   [nodeData setValue:sessionLangDict forKey:@"field_session_name"];
   [nodeData setValue:@"question" forKey:@"type"];
   [nodeData setValue:@"und" forKey:@"language"];
-  [node nodeSave:nodeData];
+  [node nodeSave:nodeData success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    HUD.labelText = @"Successful";
+    [self dismissModalViewControllerAnimated:YES];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    ALog(@"Failure: %@", [error localizedDescription]);
+  }];
+
 }
 
 - (void)viewDidUnload
@@ -81,28 +87,5 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
   return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
-- (void)nodeGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-
-}
-- (void)nodeSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  NSLog(@"%@", response);
-  [HUD hide:YES];
-  if(status) {
-    [self dismissModalViewControllerAnimated:YES];
-  }
-}
-- (void)nodeUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)nodeDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)nodeIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)nodeAttachFileDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
 }
 @end

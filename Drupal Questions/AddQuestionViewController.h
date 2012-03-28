@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 #import "DIOSNode.h"
-@interface AddQuestionViewController : UIViewController <MBProgressHUDDelegate, DIOSNodeDelegate> {
+@interface AddQuestionViewController : UIViewController <MBProgressHUDDelegate> {
   	MBProgressHUD *HUD;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "WHQuestionsRootViewController.h"
+#import "DIOSNode.h"
 @interface WHQuestionsRootViewController ()
 
 @end
@@ -14,41 +15,23 @@
 @implementation WHQuestionsRootViewController
 @synthesize questions = _questions;
 
-- (void)action:(id)sender {
-  
-}
 - (void) pullQuestions {
-  DIOSView *view = [[DIOSView alloc] initWithDelegate:self];
+  DIOSView *view = [[DIOSView alloc] init];
   NSMutableDictionary *viewParams = [NSMutableDictionary new];
   [viewParams setValue:@"questions_view" forKey:@"view_name"];
-  [view viewGet:viewParams];
+  [view viewGet:viewParams success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    _questions = responseObject;
+    [self.tableView reloadData];
+    [HUD hide:YES];
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    ALog(@"Failure: %@", [error localizedDescription]);
+  }];
 }
 - (IBAction)addQuestion:(id)sender {
   [self performSegueWithIdentifier:@"addQuestion" sender:sender];
 }
 - (IBAction)showSettings:(id)sender {
   [self performSegueWithIdentifier:@"showSettings" sender:sender];
-}
-- (void)userGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)userSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)userUpdateDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)userDeleteDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)userIndexDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)userLoginDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
-}
-- (void)userLogoutDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  
 }
 - (void)viewGetDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
   _questions = response;
@@ -94,6 +77,17 @@
   [self setTitle:@"Questions"];
   [self setQuestions:[NSArray new]];
   [self pullQuestions];
+  DIOSNode *node = [[DIOSNode alloc] init];
+  NSMutableDictionary *nodeData = [NSMutableDictionary new];
+  [nodeData setValue:@"5" forKey:@"nid"];
+  [node nodeGet:nodeData success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    //Do Something with the responseObject
+    NSLog(@"%@", responseObject);
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    //we failed, uh-oh lets error log this.
+    NSLog(@"%@,  %@", [error localizedDescription], [operation responseString]);
+  }];
+  
 }
 
 - (void)viewDidUnload

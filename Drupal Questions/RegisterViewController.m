@@ -65,21 +65,22 @@
   [self createUser];
 }
 - (void)createUser {
-  DIOSUser *user  = [[DIOSUser alloc] initWithDelegate:self];
+  DIOSUser *user  = [[DIOSUser alloc] init];
   NSMutableDictionary *userData = [NSMutableDictionary new];
   [userData setValue:[usernameField text] forKey:@"name"];
   [userData setValue:[password text] forKey:@"pass"];
   [userData setValue:[emailField text] forKey:@"mail"];
-  [user userSave:userData];
-}
-- (void)userSaveDidFinish:(BOOL)status operation:(AFHTTPRequestOperation *)operation response:(id)response error:(NSError*)error {
-  [[DIOSSession sharedSession] callDidFinish:status operation:operation response:response error:error];
-  if (status) {
+  [user userSave:userData success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    HUD.labelText = @"Successful";
+    [HUD show:YES];
+    sleep(2);
     [HUD hide:YES];
-    [self.navigationController popViewControllerAnimated:YES];
-  } else {
-    ULog(@"%@", [error localizedDescription]);
-  }
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    HUD.labelText = [error localizedDescription];
+    [HUD show:YES];
+    sleep(2);
+    [HUD hide:YES];
+  }];
 }
 
 - (void)viewDidUnload

@@ -128,6 +128,7 @@
 		1D7CB695150ABE0B001279B0 /* WHAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WHAppDelegate.h; sourceTree = "<group>"; };
 		1D7CB696150ABE0B001279B0 /* WHAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WHAppDelegate.m; sourceTree = "<group>"; };
 		1D7CB699150ABE0B001279B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1D9C1467152242990093AC4D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		1DA2D1A71511CF3500B6E165 /* AddQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuestionViewController.h; sourceTree = "<group>"; };
 		1DA2D1A81511CF3500B6E165 /* AddQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddQuestionViewController.m; sourceTree = "<group>"; };
 		1DA2D1AD151250AF00B6E165 /* done_button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = done_button_off.png; sourceTree = "<group>"; };
@@ -318,6 +319,7 @@
 				1D7CB686150ABE0B001279B0 /* UIKit.framework */,
 				1D7CB688150ABE0B001279B0 /* Foundation.framework */,
 				1D7CB68A150ABE0B001279B0 /* CoreGraphics.framework */,
+				1D9C1467152242990093AC4D /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -598,6 +600,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drupal Questions/Drupal Questions-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
@@ -607,6 +610,7 @@
 				INFOPLIST_FILE = "Drupal Questions/Drupal Questions-Info.plist";
 				OTHER_CFLAGS = "-DDEBUG=1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -616,6 +620,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Drupal Questions/Drupal Questions-Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/**",
@@ -624,6 +629,7 @@
 				);
 				INFOPLIST_FILE = "Drupal Questions/Drupal Questions-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

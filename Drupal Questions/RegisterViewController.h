@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 #import "DIOSUser.h"
-@interface RegisterViewController : UIViewController <MBProgressHUDDelegate, DIOSUserDelegate> {
+@interface RegisterViewController : UIViewController <MBProgressHUDDelegate> {
   MBProgressHUD *HUD;
 }
 
